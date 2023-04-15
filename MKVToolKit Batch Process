@@ -1,0 +1,18 @@
+@ECHO OFF
+SETLOCAL ENABLEDELAYEDEXPANSION
+SET mkvmerge="C:\Program Files\MKVToolNix\mkvmerge.exe"
+
+if not exist "output" (mkdir "output")
+
+for %%i in (*.mp4) do (
+set fn=%%i
+set fn2=!fn:~0,-4!
+echo var: !fn2!
+%mkvmerge% -o "output/!fn2!.mkv" --language "0:und" --language "1:en" "!fn!" --language "0:en-US" "!fn2!.en-us.cc.srt" --track-order "0:0,0:1,1:0"
+)
+
+echo.
+echo ============================
+echo Done. Press any key to exit.
+pause>nul
+exit
