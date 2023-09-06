@@ -1,0 +1,13 @@
+#!/usr/bin/php
+<?PHP
+require_once("/usr/local/emhttp/plugins/dynamix.docker.manager/include/DockerClient.php");
+
+$DockerTemplates = new DockerTemplates();
+$info = $DockerTemplates->getAllInfo();
+
+foreach ($info as $contName=>$cont) {
+  if ( $cont['running'] ) {
+    echo "$contName  Size: ".rtrim(exec("docker exec $contName du -shx /"),"/")."\n";
+  }
+}
+?>
