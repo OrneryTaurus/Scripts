@@ -1,0 +1,6 @@
+!
+! Title: OrneryTaurus Blocklist
+! Description: Blocklist for Ads, etc..
+! Homepage: https://github.com/AdAway/adaway.github.io/
+! Last modified: 2024-03-05
+!
